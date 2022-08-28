@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화, 그 이상의 가치. AcornBox </title>
+    <style>
+        * {
+            color: gray;
+        }
+        header {
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+        }
+        button {
+            background-color: transparent;
+            background-repeat: no-repeat;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        #headerTopContainer {
+            width: 100%;
+            height: 100px;
+            margin: 0 auto;
+            min-width: 1600px;
+        }
+        #headerTopContainer img {
+            width: 100%;
+            height: 100px;
+            min-width: 1600px;
+        }
+        #headerLogoAndButtonContainer {
+            width: 100%;
+            height: 100px;
+            min-width: 1600px;
+        }
+        #logoContainer {
+            /* width: 1000px; */
+            width: 50%;
+            height: 100px;
+            float: left;
+        }
+        #logoContainer > img {
+            width: 200px;
+            height: 100px;
+            margin: 00px auto;
+        }
+        #buttonContainer {
+            /* width: 600px; */
+            width: 50%;
+            height: 100px;
+            margin: auto;
+            float: right;
+        }
+        #buttonContainer button {
+            width: 75px;
+            height: 75px;
+            margin: 15px auto;
+        }
+        #buttonContainer button img {
+            width: 50px;
+            height: 50px;
+        }
+        #headerbottomContainer {
+            width: 100%;
+            height: 50px;
+            min-width: 1600px;
+        }
+        #headerbottomContainer > div > button {
+            width: 60px;
+            height: 30px;
+            margin: 10px auto;
+        }
+        #headerbottomButtonContainer{
+            width: 50%;
+            height: 50px;
+            margin: auto;
+            float: left;
+            border-top: 1px solid rgb(232, 229, 229);
+            border-bottom: 2px solid red;
+        }
+        #headerbottomSearchContainer {
+            width: 50%;
+            height: 50px;
+            margin: auto;
+            float: right;
+            border-top: 1px solid rgb(232, 229, 229);
+            border-bottom: 2px solid red;
+        }
+        #headerbottomSearchContainer > input {
+            margin: 15px auto;
+        }
+
+
+        
+        
+        #trailerContainer {
+            width: 100%;
+            height: 500px;
+            background-color: white;
+            text-align: center;
+            vertical-align: middle;
+            background-color: black;
+            padding-top: 60px;
+        }
+
+        #leftSideBarContainer {
+            width: 15%;
+            height: 1100px;
+            float: left;
+            /* background-color: green; */
+            text-align: center;
+        }
+
+        #leftSideBarContainer a {
+            width: 90%;
+        }
+
+        #bodyMainContentsContainer{
+            width: 85%;
+            /* float: left; */
+            /* height: 650px; */
+            background-color: aqua;
+            min-width: 1300px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+        #movieListContainer {
+            width: 100%;
+            height: 600px;
+            text-align: center;
+            flex: auto;
+            min-width: 1000px;
+            background: linear-gradient( rgb(232, 231, 231),white);
+
+        }
+        #movieListSelectionContainer > a {
+
+            width: 100px;
+            height: 50px;
+            display: inline-block;
+            border-bottom: 1px solid black;
+            border-radius: 10px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-decoration: none;
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+        }
+        #boContainer {
+            flex: 1;
+            width: 270px;
+            display: inline-block;
+            background-color: white;
+        }
+        
+        #boContainer img {
+            display: block;
+        }
+
+        #boContainer p {
+            display: block;
+            font-size: large;
+        }
+
+        #boContainer span {
+            color: red;
+            float: left;
+        }
+
+        #eventContainer {
+            width: 72%;
+            height: 500px;
+            float: left;
+            background-color: white;
+        }
+
+        #eventMenuBoxContainer {
+            width: 1200px;
+            height: 500px;
+        }
+        .hbox-menu { 
+            margin-top:4px; 
+            width:100%; 
+            /* border-top:1px solid #615C55; 
+            border-bottom:1px solid #615C55;  */
+            display: inline-block; 
+            overflow: hidden; 
+            padding: 0%;
+        } 
+        .hbox-menu li { 
+            float: left; 
+            width:18%;
+            margin-left: 2%; 
+        } 
+        .hbox-menu a { 
+            display: block;
+            text-align:center; 
+            height: 50px; 
+            line-height: 50px; 
+            background-color: #F0E7DB; 
+            color: #666666; 
+            /* border-right: 1px solid #615C55;  */
+            font-weight:bold; 
+        } 
+        .hbox-menu li:last-child a { 
+            border-right: 0; 
+        }
+
+        #eventImgContainer {
+            width: 1200px;
+            height: 400px;
+            text-align: center;
+        }
+        #eventImgContainer img {
+            width: 400px;
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        #introSpecialCinemaContainer {
+            width: 70%;
+            height: 500px;
+            margin: 0 auto;
+            min-width: 1000px;
+            background-color: darkkhaki;
+            /* position: absolute;
+            top: 1400px;
+            left: 15%; */
+            float: left;
+        }
+
+        #cardAds {
+            width: 70%;
+            height: 100px;
+            background-color: crimson;
+            text-align: center;
+            margin: 0 auto;
+            min-width: 1000px;
+            float: left;
+        }
+
+
+        #rightSideBarContainer {
+            width: 15%;
+            float: right;
+            height: 2000px;
+            background-color: blueviolet;
+            position: absolute;
+            right: 10px;
+            top: 276px;
+        }
+
+        footer {
+            width: 100%;
+            height: 500px;
+            margin: 0 auto;
+            min-width: 1600px;
+            float: left;
+            border-top: 2px solid red;
+        }
+
+        #up {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+        }
+
+        #up img {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .footerMenu {
+            width: 1560px;
+            height: 50px;
+            display: inline-block; 
+            overflow: hidden; 
+            padding: 0px;
+            border-bottom: 1px solid gray;
+            text-align: center;
+            padding-left: 50px;
+            margin-bottom: 50px;
+        }
+        .footerMenu ul li{
+            float: left; 
+            width: 150px;
+            height: 90%;
+            border-right: 1px solid gray;
+            color: gray;
+        }
+        .footerSection1 {
+            width: 200px;
+            height: 300px;
+            border-right: 1px solid gray;
+            display: block;
+            float: left;
+            margin-right: 50px;
+            margin-left: 100px;
+        }
+        .footerSection1 img {
+            width: 150px;
+            margin: 0 auto;
+        }
+        .footerSection2 {
+            width: 300px;
+            height: 300px;
+            display: block;
+            float: left;
+            margin-right: 100px;
+            padding-right: 50px;
+            border-right: 1px solid gray;
+        }
+        .footerSection3 {
+            width: 400px;
+            height: 300px;
+            display: block;
+            float: left;
+            margin-right: 50px;
+            border-right: 1px solid gray;
+            padding-top: 20px;
+        }
+        .footerSection3 > h1 {
+            font-weight: bolder;
+        }
+        .footerSection4 {
+            width: 200px;
+            height: 300px;
+            display: block;
+            float: left;
+            margin-right: 50px;
+            padding-right: 50px;
+            padding-top: 20px;
+            border-right: 1px solid gray;
+        }
+    </style>
+</head>
+
+
+<body>
+    <a id="up" href="#headerTopContainer"><img src="/p5/imgStorage/uptotop.png"></a>
+
+    <header>
+        <div id="headerTopContainer">
+            <img src="/p5/imgStorage/movieBarImg.png" alt="TopMovieAd">
+        </div>
+        <div id="headerLogoAndButtonContainer">
+            <div id="logoContainer">
+                <img src="/p5/imgStorage/logo1.jpeg" alt="Logo">
+            </div>
+            <div id="buttonContainer">
+                <button><img src="/p5/imgStorage/signin.png" alt="sign in" onclick="location.href='Signup.html'"><br>회원가입</button>
+                <button><img src="/p5/imgStorage/signup.png" alt="sign in" onclick="location.href='login2.jsp'"/><br>로그인</button>
+                <button><img src="/p5/imgStorage/info.png" alt="info" onclick="location.href='userinfo.jsp'"/><br>회원정보</button>
+                <button><img src="/p5/imgStorage/cs.png" alt="cs"><br>고객센터</button>
+            </div>
+        </div>
+         
+        <div id="headerbottomContainer">
+            <div id="headerbottomButtonContainer">
+                <button>영화</button>
+                <button>극장</button>
+                <button>예매</button>
+                <button>스토어</button>
+                <button><a href="/p5/%08Event_Comment.html">이벤트</a></button>
+                <button>혜택</button>
+            </div>
+            <div id="headerbottomSearchContainer">
+                <input type="text" placeholder="영화를 검색해보세요"><button>Search</button>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div>
+        <br>
+        <div id="trailerContainer">
+            <video id="trailerVideo" width="1000" autoplay muted>
+                <source src="/p5/imgStorage/the-lost-city-trailer-1_h1080p.mov" type="video/mp4">
+            </video>
+        </div>
+        <br>
+
+        <div id="bodyMainContentsContainer">
+            
+            <div id="leftSideBarContainer">
+                <a href=""><img src="/p5/imgStorage/sidebarEvent1.jpeg"></a>
+            </div>
+
+            <div id="movieListContainer">
+                <div id="movieListSelectionContainer">
+                    <a href=""><h3>무비차트</h3></a>
+                    <a href=""><h3>상영예정작</h3></a>
+                    <a href=""><h3>전체보기</h3></a>
+                </div>
+                
+                <div id="boContainer">
+                    <ul>
+                        <li>
+                            <img src="/p5/imgStorage/boxOffice/boxOffice1.jpeg" alt="BO1">
+                            <p><span>NEW!</span>공기살인</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="boContainer">
+                    <ul>
+                        <li>
+                            <img src="/p5/imgStorage/boxOffice/boxOffice2.jpeg" alt="BO2">
+                            <p><span>2.</span>덤블도어의 비밀</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="boContainer">
+                    <ul>
+                        <li>
+                            <img src="/p5/imgStorage/boxOffice/boxOffice3.jpeg" alt="BO3">
+                            <p><span>NEW!</span>앵커</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="boContainer">
+                    <ul>
+                        <li>
+                            <img src="/p5/imgStorage/boxOffice/boxOffice4.jpeg" alt="BO4">
+                            <p><span>4.</span>로스트 시티</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+            
+        <div id="eventContainer">
+            <div id="eventMenuBoxContainer"> 
+                <ul class="hbox-menu"> 
+                    <li>
+                        <a id="firstEventBtn" onclick="changeEventImg(this);">응원댓글이벤트</a>
+                    </li> 
+                    <li>
+                        <a id="secondEventBtn" onclick="changeEventImg(1);">KT전용 혜택</a>
+                    </li> 
+                    <li>
+                        <a id="thirdEventBtn" onclick="changeEventImg(2);">앵커 예매이벤트</a>
+                    </li> 
+                    <li>
+                        <a id="fourthEventBtn" onclick="changeEventImg(3);">로스트시티 무대인사</a>
+                    </li> 
+                    <li>
+                        <a id="fifthEventBtn" onclick="changeEventImg(4);">신규회원 혜택</a>
+                    </li> 
+                </ul> 
+                <div id="eventImgContainer">
+                    <a href=""><img id="eventIntroImg" src="/p5/imgStorage/eventimg.png"></a>
+                </div>
+            </div>
+            <script>
+                function changeEventImg(num) {
+                    let img = document.getElementById("eventIntroImg");
+                    if (num == 1) {
+                        img.src = "/p5/imgStorage/ktEventImg.png";
+                    } else if (num == 2) {
+                        img.src = "/p5/imgStorage/movieEvent1.jpeg";
+                    } else if (num == 3) {
+                        img.src = "/p5/imgStorage/movieEvent2.jpeg";
+                    } else if (num == 4) {
+                        img.src = "/p5/imgStorage/movieEvent3.png";
+                    } else {
+                        img.src = "/p5/imgStorage/eventimg.png";
+                    }
+                    
+
+                }
+            </script>
+
+        </div>
+        
+
+        
+
+        <!-- <div id="introSpecialCinemaContainer">
+            <div id="introSpecialCinemaContainerTopContainer">
+                <h3>Special Cinema</h3>
+                <a href="">전체보기</a>
+            </div>
+            <div id="introSpecialCinemaContentContainer">
+                <div id="introSpecialCinemaContentImgContainer"></div>
+                <ul>
+                    <li>
+                        <a href="">
+                            <strong>Test</strong>
+                            <div>
+                                <span>TEST</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="cardAds">
+            <button>광고가 들어갈 자리입니다 감사합니다</button>
+        </div> -->
+        
+
+
+
+
+        
+        
+    </div>
+    
+
+
+    <footer>
+        <div class="footerMenu">
+            <ul>
+                <li>회사소개</li>
+                <li>Investor Relations</li>
+                <li>인재채용</li>
+                <li>공지사항</li>
+                <li>고객의 소리</li>
+                <li>이용약관</li>
+                <li>개인정보처리방침</li>
+                <li>제휴마케팅</li>
+                <li>광고안내</li>
+            </ul>
+        </div>
+        <div class="footerSection1">
+            <div><img src="/p5/imgStorage/logo1.jpeg"></div>
+        </div>
+        <div class="footerSection2">
+            <p>상호명 및 호스팅 서비스 제공: Acorn Inc.</p>
+            <p>대표이사 : 오준혁</p>
+            <p>사장 : 정해윤</p>
+            <p>이사장 : 우지윤</p>
+            <p>The largest shareholder : 주샛별</p>
+            <p>서울시 마포구 양화로 122</p>
+            <p>사업자 등록번호 : 101-86-89995</p>
+            <p>통신판매업신고 : 제2014-서울종로-0532호</p>
+        </div>
+        <div class="footerSection3">
+            <b>365고객센터 | 전자금융거래분쟁처리담당</b>
+            <h1>02-2231-6412</h1>
+            <p>서울시 마포구 양화로 122 LAB빌딩 3층, 4층</p>
+        </div>
+        <div class="footerSection4">
+            <b>우리은행 채무지급보증 안내</b>
+            <p>당사는 고객님이 현금 결제한 금액에 대해
+            우리은행과 채무지급보증 계약을 체결하여
+            안전거래를 보장하고 있습니다</p>
+        </div>
+
+    </footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Main</title>
+	<style>
+        table{
+            border:1px solid red;
+        }
+        td{
+            border:1px solid red;
+            text-align: center;
+        }
+        .r{
+            color:red;
+        }
+        button{
+            width:400px;
+            height:50px;
+            font-size:30px;
+            font-weight:bold;
+            color:red;
+        }
+        .none{
+            width:0px;
+            height:0px;
+            font-size:0px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<form name="frm" method="post" action="/pe/MovieInfo">
+<center>
+    <table>
+    <tr>
+        <td>
+        <input class="none" type="text" name="Id" value="73022149" readonly>
+        <input class="none" type="text" name="moviecode" value="JAP220806001" readonly>
+        <h1>극장판<br>
+        <span class="r">원피스 필름 레드</span></h1>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <img src="../images/reds.png" width="400px" height="400px">
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <button> 정보 보기 </button>
+        </td>
+    </tr>
+
+    </table>
+</center>
+</form>
+</body>
+</html>
